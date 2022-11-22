@@ -27,7 +27,8 @@ class MyPathManager:
         my_traversable_resource_container = importlib.resources.files(
             "pkgexampledatabases.data"
         )
-        dirpath = str(my_traversable_resource_container.__dict__["_paths"][0]) + "/"
+        # Following line gives you the system full path
+        dirpath = str(my_traversable_resource_container) + "/"
         return dirpath
 
     def get_user_datadir(self):
